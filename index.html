@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MDAnalysis Tutorial &#8212; MDAnalysis Tutorial 3.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. How to use this tutorial" href="howto.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mdanalysis-tutorial">
+<h1>MDAnalysis Tutorial<a class="headerlink" href="#mdanalysis-tutorial" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">MDAnalysis version</dt>
+<dd class="field-odd"><p>≥ 0.18.0</p>
+</dd>
+<dt class="field-even">Tutorial release</dt>
+<dd class="field-even"><p>3.0.0</p>
+</dd>
+<dt class="field-odd">Last updated</dt>
+<dd class="field-odd"><p>Aug 19, 2020</p>
+</dd>
+</dl>
+<p><a class="reference external" href="http://www.mdanalysis.org">MDAnalysis</a> is an open source Python library that helps you to quickly
+write your own analysis algorithm for studying trajectories produced
+by the most popular simulation packages <a class="reference internal" href="references.html#gowers2016" id="id1"><span>[Gowers2016]</span></a>
+<a class="reference internal" href="references.html#michaud-agrawal2011" id="id2"><span>[Michaud-Agrawal2011]</span></a>.</p>
+<p>This tutorial serves as an <strong>introduction to MDAnalysis</strong>. It starts
+out with <em>installing the library</em> and then introduces the key components
+of the library. It will show you</p>
+<ul class="simple">
+<li><p>how to load a structure or a MD trajectory;</p></li>
+<li><p>how to select parts of your system;</p></li>
+<li><p>how to work with atoms, residues and molecules through the object-oriented
+interface of MDAnalysis;</p></li>
+<li><p>how to analyze MD trajectories;</p></li>
+<li><p>how to write out modified trajectories;</p></li>
+<li><p>how to use algorithms in the  <a class="reference external" href="http://docs.mdanalysis.org/documentation_pages/analysis_modules.html">MDAnalysis.analysis</a> module
+(intermediate level of difficulty)</p></li>
+</ul>
+<p>The tutorial contains many links to the <a class="reference external" href="http://docs.mdanalysis.org/">online documentation</a> ,
+which you can use to learn more about the functions, classes, an
+methods that are discussed. The online help together with the
+interactive Python documentation (<code class="docutils literal notranslate"><span class="pre">help(...)</span></code> or <code class="docutils literal notranslate"><span class="pre">...?</span></code> in
+<strong class="program">ipython</strong>) should help you while you are using the library.</p>
+<p>If you have <strong>questions or suggestions</strong> please post them in the
+<a class="reference external" href="http://groups.google.com/group/mdnalysis-discussion">MDAnalysis User Discussion Group</a>.</p>
+<p>Begin the tutorial with <a class="reference internal" href="howto.html"><span class="doc">How to use this tutorial</span></a> and use the <em>sidebar</em> for navigation.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logos/mdanalysistutorial-logo-200x150.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">1. How to use this tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installing MDAnalysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preparations.html">3. Preparations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">4. Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atomgroups.html">5. Working with AtomGroups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectories.html">6. Trajectory analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing.html">7. Writing coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysismodule.html">8. Using the MDAnalysis.analysis modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. References</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://mdanalysis.org">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.mdanalysis.org">docs</a></li>
+    
+    <li class="toctree-l1"><a href="http://wiki.mdanalysis.org">wiki</a></li>
+    
+    <li class="toctree-l1"><a href="http://users.mdanalysis.org">user discussion group</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/mdanalysis">GitHub</a></li>
+    
+    <li class="toctree-l1"><a href="https://twitter.com/mdanalysis">@mdanalysis</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="howto.html" title="next chapter"><span class="section-number">1. </span>How to use this tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+      &copy;2015-2017, Oliver Beckstein, Max Linke.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/mdanalysis" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+  </body>
+</html>
