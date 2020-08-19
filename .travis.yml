@@ -1,9 +1,8 @@
 language: python
 cache: pip
-sudo: false
 
 python:
-  - '3.6'
+  - '3.7'
 
 env:
   global:
@@ -12,7 +11,7 @@ env:
     - HTML_DIR=doc/sphinx/_build/html
 
 install:
-  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then pip install --upgrade sphinx sphinx-sitemap; fi
+  - pip install --upgrade sphinx sphinx-sitemap
 
 script:
   # touch .nojekyll else github-pages messes up theme
@@ -22,10 +21,13 @@ deploy:
   # stuff related to deploying to gh-pages
   # GH_TOKEN is set in env:global:secure
   provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
+  strategy: git  
+  cleanup: false
+  token: $GH_TOKEN
   on:
     branch: master
-    python: "3.6"
+    python: "3.7"
   local_dir: ${HTML_DIR}
   project_name: MDAnalysisTutorial
+  # use dpl v2
+  edge: true
